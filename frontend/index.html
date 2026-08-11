@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SHIVA AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="logo">S</div>
+
+                <div>
+                    <h2>SHIVA AI</h2>
+                    <span>Personal AI Assistant</span>
+                </div>
+            </div>
+
+            <button class="new-chat" onclick="clearChat()">
+                + New Conversation
+            </button>
+
+            <nav>
+                <button onclick="setMode('general')">💬 General AI</button>
+                <button onclick="setMode('developer')">💻 Developer</button>
+                <button onclick="setMode('study')">📚 Study Mode</button>
+                <button onclick="setMode('resume')">📄 Resume</button>
+                <button onclick="setMode('research')">🔎 Research</button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>SHIVA AI v1.0</p>
+                <p>Voice enabled 🎙️</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <div>
+                    <h1>SHIVA AI</h1>
+                    <p id="modeText">General AI Assistant</p>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+
+            </header>
+
+
+            <!-- CHAT -->
+            <section class="chat-container" id="chatContainer">
+
+                <div class="welcome">
+
+                    <div class="big-logo">S</div>
+
+                    <h2>Welcome to SHIVA AI</h2>
+
+                    <p>
+                        Your personal AI command center.
+                        Ask questions, use your voice, learn,
+                        code and explore.
+                    </p>
+
+                    <div class="examples">
+
+                        <button onclick="useExample('Explain recursion in C')">
+                            Explain recursion in C
+                        </button>
+
+                        <button onclick="useExample('Help me debug my C program')">
+                            Debug my C program
+                        </button>
+
+                        <button onclick="useExample('Create a study plan for today')">
+                            Create a study plan
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INPUT -->
+            <section class="input-area">
+
+                <div class="input-box">
+
+                    <button
+                        id="micButton"
+                        class="mic-button"
+                        onclick="startListening()"
+                        title="Voice Input">
+                        🎙️
+                    </button>
+
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Talk to SHIVA AI..."
+                        autocomplete="off"
+                        onkeydown="handleEnter(event)"
+                    >
+
+                    <button
+                        class="send-button"
+                        onclick="sendMessage()">
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="voice-status" id="voiceStatus">
+                    Click 🎙️ to speak with SHIVA
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
